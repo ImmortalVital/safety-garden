@@ -93,6 +93,92 @@ body {
   color: var(--white-color) !important;
 }
 
+.page-background {
+  z-index: -1;
+  /*background-image: url(https://uploads-ssl.webflow.com/5f00ac7…/5f4bfbc…_06.%20Wisteria.jpg);*/
+  background-image: linear-gradient(200deg, var(--primary-color), #6c878b, var(--secondary-color));
+  background-position: 50%;
+  background-size: cover;
+  background-attachment: fixed;
+  position: fixed;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+}
+
+.animate-wrapper {
+  opacity: 0;
+}
+
+.animate-wrapper.animate-show {
+  opacity: 1;
+  animation-duration: 3s;
+  animation-name: elementshow;
+}
+
+.animate-text {
+  opacity: 0;
+}
+
+.animate-text.animate-show {
+  opacity: 1;
+  animation-duration: 2s;
+  animation-name: textshow;
+}
+
+@keyframes textshow {
+  from {
+    opacity: 0;
+    position: relative;
+    right: 250px;
+  }
+
+  to {
+    opacity: 1;
+    right: 0px;
+  }
+}
+
+@keyframes elementshow {
+  from {
+    opacity: 0;
+    position: relative;
+    right: 150px;
+  }
+
+  to {
+    opacity: 1;
+    right: 0px;
+  }
+}
+
+.animate-up {
+  opacity: 0;
+}
+
+.animate-up.animate-show {
+  opacity: 1;
+  animation-duration: 2s;
+  animation-name: animateup;
+}
+
+@keyframes animateup {
+  from {
+    opacity: 0;
+    position: relative;
+    top: 150px;
+  }
+
+  90% {
+    /*top: 5px;*/
+  }
+
+  to {
+    opacity: 1;
+    top: 0px;
+  }
+}
 /*---------------------------------------
   TYPOGRAPHY               
 -----------------------------------------*/
@@ -1149,7 +1235,7 @@ blockquote {
   }
   
   .navbar {
-    background-color: var(--secondary-color);
+    background-color: var(--dark-color);
   }
 
   .navbar-nav .dropdown-menu {

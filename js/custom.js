@@ -50,4 +50,28 @@
   
   })(window.jQuery);
 
+  // Animate element
+  function onEntry(entry) {
+    entry.forEach(change => {
+      if (change.isIntersecting) {
+        change.target.classList.add('animate-show');
+      }
+    });
+  }
+  let options = { threshold: [0.5] };
+  let observer = new IntersectionObserver(onEntry, options);
+  let elements = document.querySelectorAll('.animate-wrapper, .animate-text,.animate-up');
+  for (let elm of elements) {
+    observer.observe(elm);
+  }
 
+  (function ($) {
+    $(window).on('scroll', function(){
+      if ( $('#sticky-wrapper').hasClass( "is-sticky" ) ) {
+        $('#main-logo').attr("src","images/main-logo.png");
+      } else {
+        $('#main-logo').attr("src","images/main-logo-white.png");
+      }
+    });
+
+  })(window.jQuery);
