@@ -96,7 +96,7 @@ body {
 .page-background {
   z-index: -1;
   /*background-image: url(https://uploads-ssl.webflow.com/5f00ac7…/5f4bfbc…_06.%20Wisteria.jpg);*/
-  background-image: linear-gradient(200deg, var(--primary-color), #6c878b, var(--secondary-color));
+  background-image: linear-gradient(200deg, var(--primary-color), #174943, #4f817b, var(--secondary-color));
   background-position: 50%;
   background-size: cover;
   background-attachment: fixed;
@@ -113,16 +113,16 @@ body {
 
 .animate-wrapper.animate-show {
   opacity: 1;
-  animation-duration: 3s;
+  animation-duration: 2s;
   animation-name: elementshow;
 }
 
 .animate-text {
-  opacity: 0;
+  /*opacity: 0;*/
 }
 
 .animate-text.animate-show {
-  opacity: 1;
+  /*opacity: 1;*/
   animation-duration: 2s;
   animation-name: textshow;
 }
@@ -130,26 +130,24 @@ body {
 @keyframes textshow {
   from {
     opacity: 0;
-    position: relative;
-    right: 250px;
+    transform: translate(-50%, 0);
   }
 
   to {
     opacity: 1;
-    right: 0px;
+    transform: translate(0,0);
   }
 }
 
 @keyframes elementshow {
   from {
     opacity: 0;
-    position: relative;
-    right: 150px;
+    transform: translate(-50%, 0);
   }
 
   to {
     opacity: 1;
-    right: 0px;
+    transform: translate(0,0);
   }
 }
 
@@ -159,24 +157,19 @@ body {
 
 .animate-up.animate-show {
   opacity: 1;
-  animation-duration: 2s;
+  animation-duration: 3s;
   animation-name: animateup;
 }
 
 @keyframes animateup {
   from {
     opacity: 0;
-    position: relative;
-    top: 150px;
-  }
-
-  90% {
-    /*top: 5px;*/
+    transform: translate(0, 150%);
   }
 
   to {
     opacity: 1;
-    top: 0px;
+    transform: translate(0,0);
   }
 }
 /*---------------------------------------
@@ -451,7 +444,10 @@ strong {
   color: var(--white-color) !important;
 }
 
-.first-section .nav-link.active,
+.first-section .nav-link.active {
+  color: #aba7a7 !important;
+}
+
 .first-section .nav-link:hover {
   color: var(--secondary-color) !important;
 }
@@ -473,7 +469,10 @@ strong {
   padding-bottom: 15px;
 }
 
-.navbar-nav .nav-link.active, 
+.navbar-nav .nav-link.active {
+  color: var(--white-color);
+}
+
 .navbar-nav .nav-link:hover {
   color: var(--white-color);
 }
