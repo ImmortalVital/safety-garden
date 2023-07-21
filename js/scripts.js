@@ -3,22 +3,26 @@ var sectionArray = [1, 2, 3, 4, 5];
 $.each(sectionArray, function(index, value){
 
     $(document).scroll(function(){
-        var offsetSection = $('#' + 'section_' + value).offset().top - 75;
-        var docScroll = $(document).scrollTop();
-        var docScroll1 = docScroll + 1;
+        var section = $('#' + 'section_' + value);
+        if (section.length) {
+            var offsetSection = section.offset().top - 75;
+            var docScroll = $(document).scrollTop();
+            var docScroll1 = docScroll + 1;
 
 
-        if ( docScroll1 >= offsetSection ){
-            $('.navbar-nav .nav-item .nav-link').removeClass('active');
-            $('.navbar-nav .nav-item .nav-link:link').addClass('inactive');
-            $('.navbar-nav .nav-item .nav-link').eq(index).addClass('active');
-            $('.navbar-nav .nav-item .nav-link').eq(index).removeClass('inactive');
-            if ( docScroll1 == 1 ) {
-                $('.navbar').addClass('first-section');
-            } else {
-                $('.navbar').removeClass('first-section');
+            if ( docScroll1 >= offsetSection ){
+                $('.navbar-nav .nav-item .nav-link').removeClass('active');
+                $('.navbar-nav .nav-item .nav-link:link').addClass('inactive');
+                $('.navbar-nav .nav-item .nav-link').eq(index).addClass('active');
+                $('.navbar-nav .nav-item .nav-link').eq(index).removeClass('inactive');
+                if ( docScroll1 == 1 ) {
+                    $('.navbar').addClass('first-section');
+                } else {
+                    $('.navbar').removeClass('first-section');
+                }
             }
         }
+
     });
     $('.click-scroll').eq(index).click(function(e){
         var offsetClick = $('#' + 'section_' + value).offset().top - 75;
